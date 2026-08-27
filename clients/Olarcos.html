@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Olarcos | Tap Profile</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="card-container">
+    
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <img src="/assets/wahtoshiii.jpg" alt="Joshua Olarcos" class="avatar" />
+      <h1 class="name">Joshua Olarcos</h1>
+      <p class="tagline">Freelance Programmer</p>
+      <p class="bio">Building web applications. Open for commissions & collabs.</p>
+    </header>
+
+    <!-- Save Contact Button (1-Click vCard) -->
+    <section class="action-section">
+      <button class="save-contact-btn" onclick="saveContact()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+        Save Contact
+      </button>
+    </section>
+
+    <!-- Social & Work Links -->
+    <nav class="links-group">
+      <a href="https://www.instagram.com/wahtoshiii?igsi=MTUwYm5zZTlhNm44eg==" target="_blank" rel="noopener" class="link-btn highlight">
+        <span>📸 Instagram</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://www.tiktok.com/@wahtoshiii?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener" class="link-btn highlight">
+        <span>🎵 TikTok</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://t.me/wahtoshiii" target="_blank" rel="noopener" class="link-btn highlight">
+        <span>✉️ Telegram</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://m.me/wahtoshiii" target="_blank" rel="noopener" class="link-btn highlight">
+        <span>💬 Messenger</span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+
+    <!-- Footer Branding -->
+    <footer class="footer">
+      <p>Powered by <strong>TapCard</strong></p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Client contact info configuration
+    const contactData = {
+      name: "Joshua Olarcos",
+      title: "Freelance Programmer",
+      phone: "09709257950",
+      email: "olarcosjoshua21@gmail.com",
+      url: "https://github.com/wahtoshiii"
+    };
+
+    function saveContact() {
+      const vcard = `BEGIN:VCARD\r\nVERSION:3.0\r\nFN:${contactData.name}\r\nTITLE:${contactData.title}\r\nTEL;TYPE=CELL:${contactData.phone}\r\nEMAIL;TYPE=INTERNET:${contactData.email}\r\nURL:${contactData.url}\r\nEND:VCARD`;
+      
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      
+      link.href = url;
+      link.setAttribute('download', `${contactData.name.replace(/\s+/g, '_')}.vcf`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

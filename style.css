@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 16px;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.bio {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-top: 10px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+.action-section {
+  width: 100%;
+}
+
+.save-contact-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.save-contact-btn:active {
+  transform: scale(0.98);
+  background-color: #0ea5e9;
+}
+
+.links-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e293b;
+  color: #f1f5f9;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid #334155;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.link-btn.highlight {
+  border-color: #38bdf8;
+  background-color: #1e293b;
+}
+
+.link-btn:active {
+  transform: scale(0.98);
+  background-color: #334155;
+}
+
+.arrow {
+  color: #64748b;
+}
+
+.footer {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #64748b;
+}
