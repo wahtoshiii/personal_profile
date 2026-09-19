@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grace Ann Carilla | Tap Profile</title>
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <main class="card-container">
     
-    <!-- Profile Header -->
     <header class="profile-header">
       <img src="/assets/greysdaneym.jpg" alt="Grace Ann Carilla" class="avatar" />
       <h1 class="name">Grace Ann Carilla</h1>
@@ -18,7 +18,6 @@
       <p class="bio">Capturing moments that tell stories.</p>
     </header>
 
-    <!-- Save Contact Button (1-Click vCard) -->
     <section class="action-section">
       <button class="save-contact-btn" onclick="saveContact()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -30,27 +29,37 @@
       </button>
     </section>
 
-    <!-- Social & Work Links -->
     <nav class="links-group">
       <a href="https://www.instagram.com/greysdaneym?igsi=MmhqaXAyMzhzY2tx" target="_blank" rel="noopener" class="link-btn highlight">
-        <span>📸 Instagram</span>
+        <div class="link-content">
+          <i class="fa-brands fa-instagram"></i>
+          <span> Instagram</span>
+        </div>
         <span class="arrow">→</span>
       </a>
       <a href="https://www.tiktok.com/@ddeonuuuswife?_r=1&_t=ZS-99EbEMfzIn4" target="_blank" rel="noopener" class="link-btn highlight">
-        <span>🎵 TikTok</span>
+        <div class="link-content">
+          <i class="fa-brands fa-tiktok"></i>
+          <span> TikTok</span>
+        </div>
         <span class="arrow">→</span>
       </a>
       <a href="https://t.me/Greysdaneym" target="_blank" rel="noopener" class="link-btn highlight">
-        <span>✉️ Telegram</span>
+        <div class="link-content">
+          <i class="fa-brands fa-telegram"></i>
+          <span> Telegram</span>
+        </div>
         <span class="arrow">→</span>
       </a>
       <a href="https://www.facebook.com/greysdaneym" target="_blank" rel="noopener" class="link-btn highlight">
-        <span>📓 Facebook</span>
+        <div class="link-content">
+          <i class="fa-brands fa-facebook"></i>
+          <span> Facebook</span>
+        </div>
         <span class="arrow">→</span>
       </a>
     </nav>
 
-    <!-- Footer Branding -->
     <footer class="footer">
       <p>Powered by <strong>TapCard</strong></p>
     </footer>
@@ -58,7 +67,6 @@
   </main>
 
   <script>
-    // Client contact info configuration
     const contactData = {
       name: "Grace Ann Carilla",
       title: "Freelance Photographer",
