@@ -33,6 +33,15 @@ body {
   left: -100px;
 }
 
+.pattern-center {
+  width: 350px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.05; /* Sobrang labo lang para hindi maka-distract */
+}
+
 .pattern-br {
   width: 250px;
   height: 250px;
@@ -59,6 +68,11 @@ body {
     height: 500px;
     bottom: -90px;
     right: -80px;
+  }
+  .pattern-center {
+    width: 700px;
+    height: 700px;
+    opacity: 0.03;
   }
 }
 
