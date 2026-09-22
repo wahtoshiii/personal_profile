@@ -37,9 +37,9 @@ body {
   width: 350px;
   height: 350px;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  opacity: 0.05; /* Sobrang labo lang para hindi maka-distract */
+  opacity: 0.05;
 }
 
 .pattern-br {
