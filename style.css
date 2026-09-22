@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #1a1a1c;
+  background-color: #d1d1de;
   color: #f8fafc;
   display: flex;
   justify-content: center;
@@ -36,8 +36,8 @@ body {
 .pattern-br {
   width: 250px;
   height: 250px;
-  bottom: -80px;
-  right: -80px;
+  bottom: -40px;
+  right: -40px;
 }
 
 .cube-lines {
