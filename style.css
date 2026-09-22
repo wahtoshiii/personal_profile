@@ -36,8 +36,8 @@ body {
 .pattern-br {
   width: 250px;
   height: 250px;
-  bottom: -40px;
-  right: -40px;
+  bottom: 0px;
+  right: 0px;
 }
 
 .cube-lines {
