@@ -33,6 +33,13 @@ body {
   left: -100px;
 }
 
+.pattern-tr {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  right: -40px;
+}
+
 .pattern-center {
   width: 350px;
   height: 350px;
@@ -40,6 +47,13 @@ body {
   left: 40%;
   transform: translate(-50%, -50%);
   opacity: 0.05;
+}
+
+.pattern-bl {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
 }
 
 .pattern-br {
@@ -73,6 +87,18 @@ body {
     width: 700px;
     height: 700px;
     opacity: 0.03;
+  }
+  .pattern-tr {
+    width: 350px;
+    height: 350px;
+    top: -80px;
+    right: -80px;
+  }
+  .pattern-bl {
+    width: 380px;
+    height: 380px;
+    bottom: -100px;
+    left: -100px;
   }
 }
 
