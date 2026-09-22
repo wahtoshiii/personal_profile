@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lowela Bergais | Tap Profile</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <svg class="geo-pattern pattern-tl" viewBox="0 0 150 150">
+    <defs>
+      <g id="cube">
+        <polygon class="cube-lines" points="50,30 67.32,40 67.32,60 50,70 32.68,60 32.68,40" />
+        <line class="cube-lines" x1="50" y1="50" x2="50" y2="30" />
+        <line class="cube-lines" x1="50" y1="50" x2="67.32" y2="60" />
+        <line class="cube-lines" x1="50" y1="50" x2="32.68" y2="60" />
+      </g>
+    </defs>
+    <use href="#cube" x="0" y="0" />
+    <use href="#cube" x="34.64" y="20" />
+    <use href="#cube" x="34.64" y="-20" />
+    <use href="#cube" x="0" y="40" />
+    <use href="#cube" x="69.28" y="0" />
+    <use href="#cube" x="69.28" y="40" />
+    <use href="#cube" x="34.64" y="60" />
+  </svg>
+
+  <svg class="geo-pattern pattern-br" viewBox="0 0 220 220">
+    <use href="#cube" x="103.92" y="60" />
+    <use href="#cube" x="69.28" y="80" />
+    <use href="#cube" x="138.56" y="80" />
+    <use href="#cube" x="103.92" y="100" />
+    <use href="#cube" x="69.28" y="120" />  
+    <use href="#cube" x="138.56" y="120" />
+    <use href="#cube" x="103.92" y="140" />
+  </svg>
+
+  <main class="card-container">
+    
+    <header class="profile-header">
+      <img src="/assets/bergais.jpe" alt="Lowela Bergais" class="avatar" />
+      <h1 class="name">Lowela Bergais</h1>
+      <p class="tagline">Staff Writer</p>
+      <p class="bio">Fall seven times, Stand up eight.</p>
+    </header>
+
+    <section class="action-section">
+      <button class="save-contact-btn" onclick="saveContact()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+          <polyline points="17 21 17 13 7 13 7 21"></polyline>
+          <polyline points="7 3 7 8 15 8"></polyline>
+        </svg>
+        Save Contact
+      </button>
+    </section>
+
+    <nav class="links-group">
+      <a href="https://www.instagram.com/aurelvve?stkn=MWl0OWF2eHdsNXJmbQ==" target="_blank" rel="noopener" class="link-btn highlight">
+        <div class="link-content">
+          <i class="fa-brands fa-instagram"></i>
+          <span> Instagram</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://www.tiktok.com/@autumnwella?_r=1&_t=ZS-99wQFJds97I" target="_blank" rel="noopener" class="link-btn highlight">
+        <div class="link-content">
+          <i class="fa-brands fa-tiktok"></i>
+          <span> TikTok</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href=" https://www.facebook.com/autumnwella" target="_blank" rel="noopener" class="link-btn highlight">
+        <div class="link-content">
+          <i class="fa-brands fa-facebook"></i>
+          <span> Facebook</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://m.me/autumnwella" target="_blank" rel="noopener" class="link-btn highlight">
+        <div class="link-content">
+          <i class="fa-brands fa-facebook-messenger"></i>
+          <span> Messenger</span>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+
+    <footer class="footer">
+      <p><strong>wahtoshiii</strong> | Digital Profile</p>
+    </footer>
+
+  </main>
+
+  <script>
+    const contactData = {
+      name: "Lowela Bergais",
+      title: "Staff Writer",
+      phone: "09922657349",
+      email: "bergaislowela6@gmail.com",
+    };
+
+    function saveContact() {
+      const vcard = `BEGIN:VCARD\r\nVERSION:3.0\r\nFN:${contactData.name}\r\nTITLE:${contactData.title}\r\nTEL;TYPE=CELL:${contactData.phone}\r\nEMAIL;TYPE=INTERNET:${contactData.email}\r\nURL:${contactData.url}\r\nEND:VCARD`;
+      
+      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      
+      link.href = url;
+      link.setAttribute('download', `${contactData.name.replace(/\s+/g, '_')}.vcf`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
