@@ -6,23 +6,73 @@
 }
 
 body {
-  background: radial-gradient(circle at top right, #341a5f, #0a0e17 60%, #1c0e36);
-  background-attachment: fixed;
+  background-color: #1a1a1c;
   color: #f8fafc;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px 16px;
+  overflow-x: hidden;
 }
 
+/* ----------------------------------
+   GEOMETRIC BACKGROUND
+------------------------------------- */
+.geo-pattern {
+  position: fixed;
+  opacity: 0.25; 
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-tl {
+  width: 300px;
+  height: 300px;
+  top: -120px;
+  left: -100px;
+}
+
+.pattern-br {
+  width: 250px;
+  height: 250px;
+  bottom: -40px;
+  right: -40px;
+}
+
+.cube-lines {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+@media (min-width: 768px) {
+  .pattern-tl {
+    width: 650px; 
+    height: 650px;
+    top: -280px;
+    left: -240px;
+  }
+  .pattern-br {
+    width: 500px; 
+    height: 500px;
+    bottom: -80px;
+    right: -80px;
+  }
+}
+
+/* ----------------------------------
+   ORIGINAL UI STYLES
+------------------------------------- */
 .card-container {
   width: 100%;
-  max-width: 380px;
+  max-width: 380px; 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  z-index: 10; 
 }
 
 .profile-header {
@@ -54,41 +104,12 @@ body {
   margin-top: 2px;
 }
 
-.location {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 4px;
-}
-
 .bio {
   font-size: 0.85rem;
   color: #f1f5f9;
   margin-top: 10px;
   line-height: 1.4;
   padding: 0 10px;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.tech-badge {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  color: #e2e8f0;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
 }
 
 .action-section {
@@ -145,17 +166,14 @@ body {
   align-items: center;
   justify-content: space-between;
   
-  /* Deeper transparency and higher blur for a more premium glass look */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   
-  /* Refined light reflections on the edges */
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
   
-  /* Added inset shadow to simulate inner glass thickness */
   box-shadow: 
     0 8px 32px 0 rgba(0, 0, 0, 0.3), 
     inset 0 1px 1px rgba(255, 255, 255, 0.15);
@@ -175,8 +193,6 @@ body {
 .link-btn:nth-child(2) { animation-delay: 0.2s; }
 .link-btn:nth-child(3) { animation-delay: 0.3s; }
 .link-btn:nth-child(4) { animation-delay: 0.4s; }
-.link-btn:nth-child(5) { animation-delay: 0.5s; }
-.link-btn:nth-child(6) { animation-delay: 0.6s; }
 
 .link-btn:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
@@ -185,7 +201,7 @@ body {
   box-shadow: 
     0 12px 40px 0 rgba(0, 0, 0, 0.4), 
     inset 0 1px 1px rgba(255, 255, 255, 0.2),
-    0 0 15px rgba(56, 189, 248, 0.15); /* Soft cyan glow reflecting off the glass */
+    0 0 15px rgba(56, 189, 248, 0.15); 
   color: #38bdf8;
 }
 
